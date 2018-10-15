@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php
+    session_start();
+    if(!$_SESSION['id']) {
+      header('Location: ../index.php');
+    }
+    $post_id = $_GET['postId'];
+    $_SESSION['post_id'] = $post_id;
+
+?>
 
 <!-- The main section-->
 
@@ -7,6 +15,7 @@
        <!--create the post area-->
 
        <div class="userPostDisplayArea">
+
           <?php
               foreach (getPost() as $post) {
                 ?>
@@ -49,8 +58,11 @@
           ?>
           <!-- Form to leave a comment -->
           <?php
-                insertComments();
+                //insertComments();
             ?>
+            <div class="statusDisplay">
+
+            </div>
 
           <h1 class="replyTitle flow-text">Leave a reply</h1>
           <form class="commentForm" action="" method="post">
@@ -60,25 +72,16 @@
 
 
           <!-- Display the comment left by the commenter -->
-          <?php
 
-            foreach (displayComments() as $comment) {
-              ?>
+              <div class="commentsContainer">
                   <div class="commenterImage">
-                      <img src="user_profile/<?= $comment['userProfilePic']?>" width="50px" height="50px" class="commenterPicture">
-                      <p class="commenterName"><?=$comment['commenter_name']?> replied</p>
-                      <p class="commenteTime"><?=$comment['comment_date']?></p>
+
                   </div>
 
                   <div class="commentCore">
-                      <?=$comment['comment_core']?>
+
                   </div>
-              <?php
-            }
-
-          ?>
-
-
+              </div>
 
 
 
@@ -95,6 +98,7 @@
        </div>
 </div>
 
+<script src="js/comments.js"></script>
 
 <!-- The right section-->
 <!-- some style-->
@@ -309,6 +313,22 @@
       padding-bottom: 2px;
     }
 
+    .statusDisplay
+    {
+      background-color: #FB3640;
+      color: #F4F4F4;
+      text-align: center;
+      height: 40px;
+      width: 646px;
+
+    }
+
+    .statusDisplay p
+    {
+      position: relative;
+      top: 9px;
+
+    }
 
 
 

@@ -1,1 +1,1 @@
-<h1>hello admin</h1>
+<h1>Here will be the admin part</h1>

@@ -1,4 +1,8 @@
-<?php session_start();
+<?php
+  session_start();
+  if(!$_SESSION['id']) {
+    header('Location: ../index.php');
+  }
   $receiverSession = $_GET['name'];
   $_SESSION['name'] = $receiverSession;
 ?>
@@ -48,14 +52,12 @@
 
       </div>
 
-
-
       <div class="status">
 
       </div>
 
 
-
+<script src="js/tchat.js"></script>
 <style>
     .displayTchatCore
     {

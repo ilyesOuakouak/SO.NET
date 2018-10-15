@@ -67,6 +67,8 @@
         {
           border-right: 1px solid #e0e0e0;
           background-color: #fafafa;
+          position: relative;
+          top:70px;
         }
         .leftSection li
         {
@@ -175,5 +177,5 @@
             background-color: transparent;
         }
 
-      
+
       </style>

@@ -14,12 +14,7 @@
             "r" => $_SESSION['name'],
             "m" => $message
           ));
-          ?>
-              <div class="status">
-                <?php echo "submited";?>
-              </div>
-          <?php
-
+          
       }else {
          ?>
           <div class="status">

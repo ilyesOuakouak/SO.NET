@@ -1,7 +1,11 @@
 <?php
   session_start();
+  if(!$_SESSION['id']) {
+    header('Location: ../index.php');
+  }
  ?>
  <!-- The left section-->
+ </script>
  <div class="row">
     <div class="col s3 leftSection">
       <!-- display the image and pseudo of the user-->
@@ -20,6 +24,9 @@
               <h2 class="flow-text userPseudoText"><?= $_SESSION['pseudo']?></h1>
             </div>
         </div>
+        <div class="postStatus">
+
+        </div>
     </div>
 
 <!-- The main section-->
@@ -28,25 +35,28 @@
         <!-- Create the userPostForm -->
 
         <div class="userFormPost">
-          <form action="user_index.php?page=dashboard" method="post" enctype="multipart/form-data">
+          <form method="post" enctype="multipart/form-data" class="sendForm">
             <div class="userFormPostButtons">
               <input type="file" name="addPostImageBtn" class="waves-effect waves-light btn userPicBtn" value="ADD IMAGE">
-              <button type="submit" name="publishPostBtn" class="waves-effect waves-light btn userPostBtn"><i class="material-icons right">send</i>Post</a>
+                <button type="submit" name="publishPostBtn" class="waves-effect waves-light btn userPostBtn">
+                  <i class="material-icons right">send</i>Post
+                </button>
             </div>
-              <textarea type="text" name="addPostTextCore" class="userPostText" name="name"></textarea>
+              <textarea type="text" name="addPostTextCore" class="userPostText"></textarea>
           </form>
         </div>
         <!-- Some php to deal with data-->
-        <?php publishPost(); ?>
+        <?php publishPost();?>
         <!-- create a line -->
         <div class="line">
 
         </div>
 
         <!--create the post area-->
+
         <div class="userPostDisplayArea">
                 <?php foreach (sharePostDisplayData() as $result) {
-                  ?>
+                ?>
                   <div class="displayPosterInfoBlock">
                     <div class="displayedProfilePicturePoster">
                         <img src="user_profile/<?= $result['userProfilePic']?>" width="90px" height="90px">
@@ -80,9 +90,11 @@
                     </div>
                 <?php
               }
-              ?>
 
+            ?>
         </div>
+
+
 </div>
 
 
@@ -123,7 +135,7 @@
  </div>
 
 
-
+<script src="js/postPublish.js"></script>
 
 
 
@@ -429,7 +441,14 @@
     top: 5px;
   }
 
+  /*just a simple test*/
+  .postStatus {
+    background-color: red;
+    position: relative;
+    top: 150px;
+  }
 
+  /*end of the test/
 
 
 

@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(!$_SESSION['id']) {
+      header('Location: ../index.php');
+    }
     // update the pseudo of the user
     if(isset($_POST['updatePseudoBtn']))
     {
@@ -37,7 +40,7 @@
 
       <!-- The main section-->
       <div class="col s9 mainSection">
-          <h2 class="flow-text profilePageTitle">General Account Settings</h2><br><br><hr>
+          <h2 class="flow-text profilePageTitle">General Account Settings</h2><hr>
           <!-- Edit the user pseudo -->
 
             <div class="editTitle">
@@ -92,10 +95,16 @@
 
 <!-- ************************************************* CSS ********************************************************-->
     <style media="screen">
+      .mainSection {
+        position: relative;
+        top:70px;
+      }
       .leftSection
       {
         border-right: 1px solid #e0e0e0;
         background-color: #fafafa;
+        position: relative;
+        top:70px;
 
       }
       .leftSection li
@@ -109,8 +118,6 @@
       .profilePageTitle
       {
         font-family: 'Titillium Web', sans-serif;
-        position: absolute;
-        top:40px;
         color: #4e4e4e;
       }
       .editTitle

@@ -16,9 +16,6 @@
 
  <div class="menuDrop teal lighten-2">
      <ul>
-       <li><a href="user_index.php?page=messenger">Messenger</a></li>
-       <li><a href="#">setting</a></li>
-       <li><a href="#">groups</a></li>
        <li class="dropDownMenuLineSetting"><a href="user_index.php?page=profile">Settings</a></li>
        <li><a href="user_index.php?page=logout">logout</a></li>
      </ul>
@@ -105,7 +102,7 @@
     border-left: 1px solid #bdbdbd;
   }
 
-  .dropDownIco i 
+  .dropDownIco i
   {
     position: relative;
     top:3px;

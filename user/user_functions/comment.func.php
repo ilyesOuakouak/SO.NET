@@ -27,7 +27,7 @@
     }
 
     // function to insert comments to the database
-    function insertComments()
+    /*function insertComments()
     {
       global $db;
       if(isset($_POST['commentReplyBtn']))
@@ -50,10 +50,10 @@
         }
       }
 
-    }
+    }*/
 
     // function to display the comments
-    function displayComments()
+    /*function displayComments()
     {
       global $db;
       $query = $db->query("SELECT  comments.comment_id,
@@ -75,7 +75,7 @@
         $results[] = $result;
       }
       return $results;
-    }
+    }*/
 
 
     // function to display the total number in a selected post
