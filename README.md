@@ -8,7 +8,7 @@
   3 - Import the database "<strong>socialNetDb.sql</strong>" which you find inside <strong>home_functions</strong> folder <br>
   4 - Move the whole folder into your <strong>htdocs</strong> <br>
   5 - Open your favorite browser and type "<strong>localhost/"path of the folder (ex: localhost/social network)"</strong>"<br>
-  6 - Here you go, you've done !!!
+  6 - Here you go, you're done !!!
 </p>
 
 
